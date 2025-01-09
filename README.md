@@ -15,8 +15,24 @@ This repository serves as a blueprint for Python-based ETL (Extract, Transform, 
 
 ### Prerequisites
 
-- Docker: Ensure Docker is installed on your system.
-- Python 3.11+: Install the latest version of Python if needed.
+Ensure the following are installed and configured on your system:
+
+1. Python: Version 3.11 or higher.
+
+2. Docker: To run tests in an isolated environment.
+
+3. Poetry: For dependency and virtual environment management.
+curl -sSL https://install.python-poetry.org | python3 -
+
+4. Dependencies: Install the required packages using Poetry.
+poetry install
+
+The project uses the following main dependencies:
+- PySpark (3.5.2): For big data processing.
+- ConfigParser (7.1.0): For configuration management.
+- Black (24.8.0): For code formatting.
+- Pre-commit (3.8.0): For automating code quality checks.
+- Pytest (8.3.3): For testing.
 
 ---
 
@@ -26,7 +42,6 @@ This repository serves as a blueprint for Python-based ETL (Extract, Transform, 
    ```bash
    git clone https://github.com/MateusDSouza/pyspark-blueprint.git
    cd pyspark-blueprint
-
 ---
 
 ## Usage

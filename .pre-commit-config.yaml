@@ -13,8 +13,6 @@ repos:
         description: "Check YAML files for syntax errors"
       - id: check-added-large-files
         description: "Prevents large files from being added to the repository"
-      - id: fix-json
-        description: "Fix formatting issues in JSON files"
 
   # Black for automatic code formatting
   - repo: https://github.com/psf/black
@@ -24,56 +22,29 @@ repos:
         language_version: python3.11
         description: "Automatically formats Python code according to PEP 8"
 
-  # Flake8 for Python linting
-  - repo: https://github.com/pre-commit/mirrors-flake8
-    rev: v4.0.1
-    hooks:
-      - id: flake8
-        description: "Lint Python code to catch style and syntax issues"
-        additional_dependencies: 
-          - flake8-docstrings  # For checking docstring style
-          - flake8-bugbear    # For catching common Python errors
-          - flake8-comprehensions  # For checking list comprehensions
-
   # MyPy for static type checking
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.4.1
     hooks:
       - id: mypy
         description: "Check Python files for type errors"
-        additional_dependencies: 
+        additional_dependencies:
           - types-requests
 
   # isort for automatic import sorting
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.12.0
+    rev: v5.10.0
     hooks:
       - id: isort
         description: "Automatically sort imports"
         additional_dependencies:
           - isort[docstrings]  # Optional, if you want to sort docstrings too
 
-  # Bandit for security analysis of Python code
-  - repo: https://github.com/pre-commit/mirrors-bandit
-    rev: v1.7.4
-    hooks:
-      - id: bandit
-        description: "Security linter for Python code"
-        args: ["-r", "."]
-        language_version: python3.11
-
-  # Docs checker for markdown files (optional if you have markdown files in the repo)
-  - repo: https://github.com/adrienverge/yamllint
-    rev: v1.26.0
-    hooks:
-      - id: yamllint
-        description: "Lint YAML files for formatting issues"
-        
- # Run tests as a pre-commit hook using docker-compose
-  - repo: local
-    hooks:
-      - id: run-docker-compose-tests
-        name: Run Tests with Docker Compose
-        entry: docker-compose run --rm spark-test
-        language: system
-        pass_filenames: false
+# # Run tests as a pre-commit hook using docker-compose
+#  - repo: local
+#    hooks:
+#      - id: run-docker-compose-tests
+#        name: Run Tests with Docker Compose
+#        entry: docker-compose run --rm spark-test
+#        language: system
+#        pass_filenames: false

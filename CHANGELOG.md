@@ -39,7 +39,7 @@ Each change should follow this structure:
   - `Removed` is for features that have been completely removed.
   - `Fixed` should address any bugs or issues.
   - `Security` should be used for any security-related changes.
-  
+
 ---
 
 ### Versioning
