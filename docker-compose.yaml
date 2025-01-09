@@ -1,0 +1,9 @@
+services:
+  test:
+    image: "spark-test"
+    environment:
+      - PYTHONPATH=./src
+    volumes:
+      - .:/app  # Mount the current directory
+    working_dir: /app
+    command: python3 -m pytest -vv

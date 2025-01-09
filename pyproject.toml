@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "pyspark-blueprint"
+version = "0.1.0"
+description = "Python blueprint to be used to develop ETL solutions using the pyspark framework - big data processing."
+authors = ["Mateus D Souza <desouza.mateus1996@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pyspark = "^3.5.2"
+configparser = "^7.1.0"
+black = "^24.8.0"
+pre-commit = "^3.8.0"
+pytest = "^8.3.3"
+
+[tool.poetry.group.test.dependencies]
+python = "^3.11"
+pyspark = "^3.5.2"
+configparser = "^7.1.0"
+black = "^24.8.0"
+pre-commit = "^3.8.0"
+pytest = "^8.3.3"
+
+[tool.poetry.group.dev.dependencies]
+pyspark = "^3.5.2"
+configparser = "^7.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
