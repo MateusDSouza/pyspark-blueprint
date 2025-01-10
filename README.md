@@ -68,9 +68,10 @@ To implement your custom ETL logic, follow these steps:
      - If you want to run the tests directly, use the following Docker commands:
        1. Build the Docker image:
           ```bash
-          docker build -t etl-test-environment .
+          docker-compose build
+          docker-compose up -d
           ```
        2. Run the tests in the Docker container:
           ```bash
-          docker run --rm etl-test-environment pytest
+          docker-compose run --rm test
           ```

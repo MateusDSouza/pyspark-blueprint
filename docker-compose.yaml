@@ -1,9 +1,14 @@
+version: "3.8"
+
 services:
   test:
-    image: "spark-test"
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
-      - PYTHONPATH=./src
+      - PYTHONPATH=/app/src
     volumes:
-      - .:/app  # Mount the current directory
+      - .:/app
     working_dir: /app
-    command: python3 -m pytest -vv
+    command: python3 -m pytest -vv  # Command to run tests
+    tty: true  # Keep the terminal open, useful for debugging

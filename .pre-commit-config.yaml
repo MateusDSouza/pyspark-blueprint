@@ -41,10 +41,10 @@ repos:
           - isort[docstrings]  # Optional, if you want to sort docstrings too
 
 # # Run tests as a pre-commit hook using docker-compose
-#  - repo: local
-#    hooks:
-#      - id: run-docker-compose-tests
-#        name: Run Tests with Docker Compose
-#        entry: docker-compose run --rm spark-test
-#        language: system
-#        pass_filenames: false
+  - repo: local
+    hooks:
+      - id: run-docker-tests
+        name: "Run tests inside Docker"
+        entry: "docker-compose run --rm test pytest"
+        language: system
+        types: [python]
